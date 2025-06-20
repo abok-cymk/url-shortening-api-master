@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <header className="px-6 lg:px-0 py-10">
-      <nav className="max-w-6xl mx-auto" aria-label="Main navigation">
+      <nav className="max-w-7xl mx-auto" aria-label="Main navigation">
         <div className="flex items-center justify-between gap-x-8 w-full">
           <Logo />
           <div className="hidden md:flex items-center justify-between w-full">
@@ -42,7 +42,7 @@ const Navbar = () => {
                 >
                   <MenuItem
                     to={`#${item}`}
-                    className="capitalize text-sm"
+                    className="capitalize text-lg"
                     aria-current="page"
                   >
                     <span>{item}</span>
@@ -57,7 +57,7 @@ const Navbar = () => {
                   key={item}
                   className="text-GrayishViolet hover:text-VeryDarkViolet transition-colors duration-300 ease-in"
                 >
-                  <MenuItem to={`#${item}`} className="capitalize text-sm">
+                  <MenuItem to={`#${item}`} className="capitalize text-lg">
                     <span>{item}</span>
                   </MenuItem>
                 </li>
@@ -70,7 +70,7 @@ const Navbar = () => {
             onClick={() => setMenuOpen((open) => !open)}
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
-            className="md:hidden block cursor-pointer"
+            className="md:hidden block cursor-pointer relative"
           >
             <HiBars3 size={36} />
           </button>
@@ -80,7 +80,7 @@ const Navbar = () => {
           <MobileMenu
             ref={menuRef}
             open={menuOpen}
-            className="bg-DarkViolet shadow-lg rounded-lg text-center text-white text-lg font-medium mt-6 px-4"
+            className="bg-DarkViolet shadow-lg rounded-lg absolute w-[90%] left-1/2 top-60 -translate-1/2 text-center text-white text-lg font-medium mt-6 px-4"
           >
             <ul className="flex flex-col gap-y-4 p-6">
               {["features", "pricing", "resources"].map((item) => (
@@ -97,7 +97,7 @@ const Navbar = () => {
             <ul className="cta flex-col items-center py-6">
               {["login", "sign up"].map((item) => (
                 <li key={item} className="nth-[2]:mt-4">
-                  <MenuItem to={`#${item}`} className="capitalize text-sm">
+                  <MenuItem to={`#${item}`} className="capitalize text-lg">
                     <span>{item}</span>
                   </MenuItem>
                 </li>
