@@ -20,3 +20,16 @@
 .lh {
   line-height: 115%;
 }
+
+.feature {
+  background-image: url("/public/bg-shorten-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--color-DarkViolet);
+}
+
+@media screen and (min-width: 48rem) {
+  .feature {
+    background-image: url("/public/bg-shorten-desktop.svg");
+  }
+}

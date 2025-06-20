@@ -11,11 +11,11 @@ const Intro = () => {
           <div>
             <Heading
               as="h1"
-              className="lh text-4xl text-VeryDarkBlue lg:text-7xl font-bold"
+              className="lh text-4xl text-VeryDarkBlue lg:text-7xl font-bold pb-2"
             >
               More than just shorter links
             </Heading>
-            <Typography className="leading-7 text-Gray text-lg">
+            <Typography as="p" className="leading-7 text-lg">
               Build your brand’s recognition and get detailed insights on how
               your links are performing.
             </Typography>
