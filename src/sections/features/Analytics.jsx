@@ -32,7 +32,9 @@ const Analytics = () => {
   return (
     <section id="analytics" className="mt-10 px-6 lg:px-0">
       <div className="max-w-md mx-auto text-center">
-        <Heading as="h2" className="font-bold text-3xl pb-2">Advanced Statistics</Heading>
+        <Heading as="h2" className="font-bold text-3xl pb-2">
+          Advanced Statistics
+        </Heading>
         <Typography as="p">
           Track how your links are performing across the web with our advanced
           statistics dashboard.
@@ -42,7 +44,13 @@ const Analytics = () => {
         {offers.map((item) => (
           <div
             key={item.id}
-            className="bg-white shadow-lg rounded-lg p-8 relative md:nth-[2]:translate-y-8 md:nth-[3]:translate-y-16"
+            className={`bg-white shadow-lg rounded-lg p-8 relative ${
+              item.id === 2
+                ? "md:translate-y-8"
+                : item.id === 3
+                ? "md:translate-y-16"
+                : ""
+            }`}
           >
             <div className="bg-DarkViolet absolute max-sm:left-1/2 max-sm:-translate-x-1/2 -translate-y-3/4 w-fit rounded-full p-5">
               <img
@@ -52,7 +60,9 @@ const Analytics = () => {
               />
             </div>
             <div className="mt-12 text-center md:text-left">
-              <Heading as="h3" className="font-bold text-xl pb-2">{item.offer}</Heading>
+              <Heading as="h3" className="font-bold text-xl pb-2">
+                {item.offer}
+              </Heading>
               <Typography as="p">{item.description}</Typography>
             </div>
           </div>

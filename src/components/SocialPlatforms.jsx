@@ -37,16 +37,16 @@ const SocialPlatforms = ({
       {show.map((key) => {
         const { icon, url, label } = platforms[key];
         return (
-          <Link
+          <a
             key={key}
-            to={url}
+            href={url}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={label}
             className={clsx("inline-block m-2", iconClassName)}
           >
             <img src={icon} alt={label} />
-          </Link>
+          </a>
         );
 })}
     </div>

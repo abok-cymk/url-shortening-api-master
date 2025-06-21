@@ -24,7 +24,7 @@ const Footer = () => {
               <ul className="flex flex-col gap-y-2">
                 {values.map((item) => (
                   <li key={item} className="text-Gray">
-                    <Link to="/">{item}</Link>
+                    <a href="#">{item}</a>{" "}
                   </li>
                 ))}
               </ul>

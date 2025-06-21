@@ -3,12 +3,12 @@ import Heading from "../../components/ui/Heading";
 import UrlShortenerInput from "../../components/UrlShortenerInput";
 import Button from "../../components/ui/Button";
 
-const Features = () => {
+const LinkShortening = () => {
   const [links, setLinks] = useState([]);
   const [copiedIdx, setCopiedIdx] = useState(null);
 
   const handleShorten = (link) => {
-    setLinks((prev) => [link, ...prev]);
+    setLinks((prev) => [{ ...link, timestamp: Date.now() }, ...prev]);
   };
 
   const handleCopy = async (shortUrl, idx) => {
@@ -26,12 +26,15 @@ const Features = () => {
       <UrlShortenerInput
         onShorten={handleShorten}
         className="feature max-w-7xl mx-auto px-5 md:px-16 py-5 md:py-10 relative top-1/2 -translate-y-1/2 rounded-lg"
-        apiUrl="https://corsproxy.io/?https://cleanuri.com/api/v1/shorten"
+        apiUrl={
+          import.meta.env.VITE_SHORTENER_API_URL ||
+          "https://corsproxy.io/?https://cleanuri.com/api/v1/shorten"
+        }
       />
       <div className="max-w-7xl mx-auto relative -top-12 space-y-4">
         {links.map((link, idx) => (
           <div
-            key={link.short + idx}
+            key={`${link.timestamp}-${idx}`}
             className="flex flex-col md:flex-row md:items-center justify-between max-sm:gap-y-4 max-sm:divide-y divide-Gray bg-white rounded-lg px-5 py-3"
           >
             <span className="truncate w-full md:w-auto max-sm:py-4">
@@ -63,4 +66,4 @@ const Features = () => {
   );
 };
 
-export default memo(Features);
+export default memo(LinkShortening);
