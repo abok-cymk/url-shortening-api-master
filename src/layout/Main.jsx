@@ -1,11 +1,13 @@
-import Features from "../sections/Features";
 import Intro from "../sections/Intro";
+import Layout from "../sections/features/Layout";
+import BoostLinks from "../sections/BoostLinks";
 
 const Main = () => {
   return (
     <main>
       <Intro />
-      <Features />
+      <Layout />
+      <BoostLinks />
     </main>
   );
 };

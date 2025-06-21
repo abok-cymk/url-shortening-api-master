@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useCallback, useRef, memo } from "react";
 import Button from "./ui/Button";
 import { debounce } from "../utils/debounce";
-import { useCallback, useRef } from "react";
 
 const UrlShortenerInput = ({
   onShorten,
@@ -115,4 +114,4 @@ UrlShortenerInput.propTypes = {
   buttonClassName: PropTypes.string,
 };
 
-export default UrlShortenerInput;
+export default memo(UrlShortenerInput);

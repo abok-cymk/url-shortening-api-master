@@ -1,7 +1,7 @@
-import { useState } from "react";
-import Heading from "../components/ui/Heading";
-import UrlShortenerInput from "../components/UrlShortenerInput";
-import Button from "../components/ui/Button";
+import { useState, memo } from "react";
+import Heading from "../../components/ui/Heading";
+import UrlShortenerInput from "../../components/UrlShortenerInput";
+import Button from "../../components/ui/Button";
 
 const Features = () => {
   const [links, setLinks] = useState([]);
@@ -21,7 +21,7 @@ const Features = () => {
     }
   };
   return (
-    <section id="features" className="mt-38 md:mt-32 bg-Gray px-5 lg:px-0">
+    <section id="features" className="mt-38 md:mt-32 px-5 lg:px-0">
       <Heading className="sr-only">Link Shortening</Heading>
       <UrlShortenerInput
         onShorten={handleShorten}
@@ -34,7 +34,9 @@ const Features = () => {
             key={link.short + idx}
             className="flex flex-col md:flex-row md:items-center justify-between max-sm:gap-y-4 max-sm:divide-y divide-Gray bg-white rounded-lg px-5 py-3"
           >
-            <span className="truncate w-full md:w-auto max-sm:py-4">{link.original}</span>
+            <span className="truncate w-full md:w-auto max-sm:py-4">
+              {link.original}
+            </span>
             <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mt-1 md:mt-0">
               <a
                 href={link.short}
@@ -61,4 +63,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default memo(Features);

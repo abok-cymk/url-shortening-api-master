@@ -15,7 +15,7 @@ const Intro = () => {
             >
               More than just shorter links
             </Heading>
-            <Typography as="p" className="leading-7 text-lg">
+            <Typography as="p" className="leading-7">
               Build your brand’s recognition and get detailed insights on how
               your links are performing.
             </Typography>
@@ -24,7 +24,7 @@ const Intro = () => {
             Get started
           </Button>
         </div>
-        <Illustration className="order-1 md:order-2 lg:translate-x-32" />
+        <Illustration className="order-1 md:order-2 lg:translate-x-32 md:translate-x-16" />
       </div>
     </section>
   );
